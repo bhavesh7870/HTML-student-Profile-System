@@ -1,41 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Grades</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Grades</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border-radius: 4px;
+            margin: 2px;
+        }
+
+        nav a:hover {
+            background-color: #4a6491;
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: #3498db;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .content-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grades-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .grades-table caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .grades-table th {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .grades-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .grades-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .grades-table tfoot td {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .summary-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .summary-box h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 568px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem;
+            }
+
+            .content-container {
+                padding: 1.5rem;
+            }
+
+            .grades-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>My Grades</h1>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Student Portal</h1>
+            </div>
+        </div>
+    </header>
 
-  <table border="1">
-    <caption>Semester Grades</caption>
-    <thead>
-      <tr>
-        <th>Course Name</th>
-        <th>Grade</th>
-        <th>Credits</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Web Development</td>
-        <td>A</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Data Structures</td>
-        <td>B+</td>
-        <td>4</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="3">End of Report</td>
-      </tr>
-    </tfoot>
-  </table>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="Grades.html" class="active">Grades</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-  <nav>
-    <a href="index.html">Back to Home</a>
-  </nav>
+    <main>
+        <div class="content-container">
+            <h1 class="page-title">My Grades</h1>
+
+            <table class="grades-table">
+                <caption>Semester Grades</caption>
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Grade</th>
+                        <th>Credits</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web Development</td>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structures</td>
+                        <td>B+</td>
+                        <td>4</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Database Management</td>
+                        <td>A-</td>
+                        <td>3</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Systems</td>
+                        <td>In Progress</td>
+                        <td>4</td>
+                        <td>Current</td>
+                    </tr>
+                    <tr>
+                        <td>Software Engineering</td>
+                        <td>In Progress</td>
+                        <td>3</td>
+                        <td>Current</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total Completed Credits: 10</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="summary-box">
+                <h2>Grade Summary</h2>
+                <p><strong>Current GPA:</strong> 3.63</p>
+                <p><strong>Total Credits Completed:</strong> 10</p>
+                <p><strong>Credits in Progress:</strong> 7</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Student Portal. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
