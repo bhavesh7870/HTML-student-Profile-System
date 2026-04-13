@@ -1,33 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {b
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border-radius: 4px;
+            margin: 2px;
+        }
+
+        nav a:hover {
+            background-color: #4a6491;
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: #3498db;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .content-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ecf0f1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .profile-info h2,
+        .hobbies-section h2,
+        .goals-section h2 {
+            color: #3498db;
+            margin: 1.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .profile-info p {
+            margin: 0.35rem 0;
+        }
+
+        .course-list {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .goals-section ol {
+            margin-left: 1.2rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .content-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>My Profile</h1>
-  <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Student Portal</h1>
+            </div>
+        </div>
+    </header>
 
-  <h2>Personal Details</h2>
-  <p>Name: Jony sing</p>
-  <p>Age: 25</p>
-  <p>Education: Computer Science</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Profile.html" class="active">Profile</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="Grades.html">Grades</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-  <h2>Hobbies</h2>
-  <ul>
-    <li>Coding</li>
-    <li>Reading</li>
-    <li>Vollyball</li>
-  </ul>
+    <main>
+        <div class="content-container">
+            <h1 class="page-title">My Profile</h1>
 
-  <h2>Goals</h2>
-  <ol type="1">
-    <li>Master HTML & CSS</li>
-    <li>Learn JavaScript</li>
-    <li>Build interactive projects</li>
-  </ol>
+            <div class="profile-header">
+                <img src="profile.png" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h2>Personal Details</h2>
+                    <p><strong>Name:</strong> Jony Singh</p>
+                    <p><strong>Age:</strong> 25</p>
+                    <p><strong>Education:</strong> Computer Science</p>
+                </div>
+            </div>
 
-  <nav>
-    <a href="index.html">Back to Home</a>
-  </nav>
+            <div class="hobbies-section">
+                <h2>Hobbies</h2>
+                <ul class="course-list">
+                    <li>Coding</li>
+                    <li>Reading</li>
+                    <li>Volleyball</li>
+                </ul>
+            </div>
+
+            <div class="goals-section">
+                <h2>Goals</h2>
+                <ol type="1">
+                    <li>Master HTML & CSS</li>
+                    <li>Learn JavaScript</li>
+                    <li>Build interactive projects</li>
+                    <li>Get a backend development job</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Student Portal. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
